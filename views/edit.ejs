@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Fruit</h1>
+    <form action="/fruits/<%=fruit.id%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%=fruit.name%>">
+        Color: <input type="text" name="color" value="<%=fruit.color%>" />
+        Is Ready To Eat:
+            <input type="checkbox" name="readyToEat"
+                <% if(fruit.readyToEat === true) {%>
+                    checked
+                <% } %>
+            />
+        Season: <select name='season'>
+            <% seasons.forEach(season => { %>
+                <option value=<%=season.id%>> <%=season.name%> </option>
+            <% }) %>
+        </select>
+        <input type="submit" value="Edit Fruit" />
+    </form>
+</body>
+</html>

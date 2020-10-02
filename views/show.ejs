@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fruits Show Page</h1>
+    The <%=fruit.name%> is <%=fruit.color%>.
+    <% if(fruit.readyToEat) { %>
+        It is ready to eat!
+    <%} else {%>
+        Not ready to eat. Come back later.
+    <%}%>
+    It is added by <%=fruit.User.name%>
+    <h4>List of Seasons</h4>
+    <ul>
+        <% fruit.Seasons.forEach(season => { %>
+            <li><%=season.name%></li>
+        <% }) %>
+    </ul>
+</body>
+</html>

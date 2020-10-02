@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <% if(typeof msg !== 'undefined') { %>
+       <h3> <%=msg%> </h3>
+    <% } %>
+    <% if (typeof user === 'undefined') {user = {username: '', name: ''}} %>
+    <form action='/auth' method='POST'>
+        Name: <input type='text' name='name' value='<%=user.name%>' />
+        Username: <input type='text' name='username' value='<%=user.username%>'/>
+        Password: <input type='text' name='password' title='Password must be 8 characters long, contain a number, capital letter, and lowercase letter' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+        <input type='submit' value='Sign Up' />
+    </form>
+</body>
+</html>
